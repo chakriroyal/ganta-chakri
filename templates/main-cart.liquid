@@ -1,0 +1,50 @@
+<header class="cart-header">
+  <h1>🛒 Your Shopping Cart</h1>
+</header>
+
+<main class="cart-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Per Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      {% for item in cart.items %}
+      <tr>
+        <td><img src="{{ item.image | img_url: '100x' }}" alt="{{ item.title }}"></td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.price | money }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.line_price | money }}</td>
+        <td>
+          <form action="/cart/change" method="post">
+            <input type="hidden" name="id" value="{{ item.key }}">
+            <input type="hidden" name="quantity" value="0">
+            <button type="submit">❌</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-footer">
+    <p class="total">Grand Total: {{ cart.total_price | money }}</p>
+    <div class="cart-actions">
+      <a href="/" class="back-link">⬅ Continue Shopping</a>
+      <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+  </div>
+</main>
+
+<!-- CSS -->
+{{ 'cart.css' | asset_url | stylesheet_tag }}
+
+<!-- JS -->
+<script src="{{ 'cart.js' | asset_url }}"></script>

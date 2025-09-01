@@ -1,0 +1,615 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Anchor Tag */
+a {
+  text-decoration: none;
+}
+
+/* ===== HERO SECTION ===== */
+
+/* Header at the top */
+.hero-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+/* Header logo */
+.brand-logo {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+/* Header description */
+.brand-subtitle {
+  font-family: 'Jost';
+  font-size: 16px;
+}
+
+/* Header Button */
+.btn-yellow {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FFF544;
+  color: black;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-yellow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #000;
+  z-index: -1;
+  transition: width 0.4s ease-in-out;
+}
+
+.btn-yellow:hover {
+  color: white;
+}
+
+.btn-yellow:hover::before {
+  width: 100%;
+}
+
+
+/* Main banner image */
+.hero-banner {
+  background-image: url('assets/Frame.png');
+  background-position: bottom left;
+  width: inherit;
+  height: 380px;
+  margin: 0 50px;
+}
+
+/* Flex container for text + side image */
+.hero-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Left-side text content */
+.hero-text {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-text h2 {
+  font-family: 'Jost';
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.hero-text p {
+  font-family: 'Jost';
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/* Left-side Shop button*/
+.btn-black {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-black::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #FFF544;
+  z-index: -1;
+  transition: width 0.4s ease-in-out;
+}
+
+.btn-black:hover::before {
+  width: 100%;
+}
+
+.btn-black:hover {
+  color: #000;
+}
+
+
+/* Right-side supporting image */
+.hero-side-image {
+  width: 150%;
+  height: 340px;
+  background-image: url('assets/Frame.png');
+  background-size: auto;
+}
+
+/* Footnote tagline */
+.hero-footnote {
+  padding: 8px 0;
+  background-color: #F5F5F5;
+  text-align: center;
+  font-family: 'Jost';
+  font-size: 16px;
+}
+
+/* ===== FOOTER / GALLERY SECTION ===== */
+.footer-heading {
+  margin: 60px 0 20px 50px;
+  font-size: 24px;
+  font-family: 'Lustria', serif;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  margin: 0 50px 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/* Plus icon (default style) */
+.gallery-plus {
+  position: absolute;
+  background-color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Different placements per image */
+.position-1 {
+  bottom: 35%;
+  right: 35%;
+}
+
+.position-2 {
+  top: 50%;
+  right: 15%;
+}
+
+.position-3 {
+  top: 15%;
+  right: 35%;
+}
+
+.position-4 {
+  top: 15%;
+  right: 25%;
+}
+
+.position-5 {
+  top: 20%;
+  right: 45%;
+}
+
+.position-6 {
+  top: 40%;
+  right: 20%;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup container */
+.popup {
+  background: white;
+  width: 350px;
+  height: 420px;
+  padding: 20px;
+  position: relative;
+  font-family: 'Jost', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Close button */
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Top section: Image + Info */
+.popup-top {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.popup-image img {
+  width: 120px;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Text details */
+.popup-info {
+  flex: 1;
+}
+
+.popup-info h2 {
+  margin: 0 0 15px;
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: 'Jost', serif;
+}
+
+.popup-info .price {
+  font-family: 'Lustria', serif;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.popup-info .desc {
+  font-size: 14px;
+  font-family: 'Jost', serif;
+  font-weight: lighter;
+  color: #333;
+  text-align: left;
+  line-height: 1.1;
+  letter-spacing: -1%;
+}
+
+/* Bottom section full width */
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-actions .color-text {
+  font-family: 'Jost', serif;
+  font-weight: 14px;
+}
+
+.color-text{
+  font-size: 14px;
+  font-family: 'Jost', serif;
+}
+
+/* Color buttons */
+.color-options {
+  display: flex;
+  width: 100%;
+}
+
+.color-btn {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  border: 1px solid black;
+  background: white;
+  height: 30px;
+  padding: 0 8px 0 0;
+  cursor: pointer;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.color-display {
+  width: 10px;
+  height: 100%;
+  border-width: 0 0.5px 0 0;
+  border-style: solid;
+  border-color: black;
+  flex-shrink: 0;
+}
+
+/* Selected states */
+.color-btn.selected {
+  background-color: black;
+  color: white;            
+}
+
+
+
+
+/* Size dropdown */
+.size-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 6px; 
+    width: 100%;
+}
+
+
+.size-text{
+  font-size: 14px;
+  font-family: 'Jost', serif;
+}
+
+.dropdown {
+  width: 100%;
+  border: 0.5px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.default-option {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.arrow-icon {
+  border-left: 0.5px solid black;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-arrow {
+  transition: transform 0.5s ease; 
+  transform: rotate(180deg); 
+}
+
+.icon-arrow.open {
+  transform: rotate(0deg);
+}
+
+
+.options {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid black;
+  max-height: 90px;
+  overflow-y: auto;
+  background-color: white;
+  display: none;
+  z-index: 10;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.option {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: black;
+  color: white;
+}
+
+.options::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add to cart */
+.add-to-cart {
+  margin-top: 30px;
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+.add-to-cart a{
+  color: white;
+}
+
+.hamburger{
+  display: none;
+}
+
+.hero-side-image #mob{
+  display: none;
+}
+
+.hero-footnote #mob{
+  display: none;
+}
+
+/* ===== MOBILE VIEW ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  /* Header */
+  .hero-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    padding: 10px 20px;
+  }
+
+  /* Hamburger on left */
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 7px; }
+  .hamburger span:nth-child(3) { top: 14px; }
+
+  /* Center logo */
+  .brand-logo {
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Hide subtitle + yellow btn */
+  .brand-subtitle,
+  .btn-yellow {
+    display: none;
+  }
+
+  /* Hide hero banner image */
+  .hero-banner {
+    display: none;
+  }
+
+  /* Hero content stack + center */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-text #des{
+    display: none;
+  }
+
+  .hero-text {
+    margin: 0;
+    align-items: center;
+  }
+
+  .hero-text span{
+    display: none;
+  }
+
+  .hero-text h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .btn-black {
+    display: none;
+  }
+
+  /* Side image directly below text */
+  .hero-side-image {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    display: flex;              
+    justify-content: center;   
+    align-items: center; 
+  }
+
+  .hero-side-image #mob{
+    display: block;
+  }
+
+  .hero-footnote{
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .hero-footnote #mob{
+    display: inline;
+  }
+
+  .hero-footnote #des{
+    display: none;
+  }
+
+  .footer-heading{
+    text-align: center;
+    margin: 30px 0px 20px 0px;
+  }
+
+  /* Gallery grid becomes 2x2 */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+    gap: 15px;
+  }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 22px;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+  .btn-black {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}

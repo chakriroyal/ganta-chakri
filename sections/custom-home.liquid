@@ -1,0 +1,141 @@
+{% comment %}
+Custom homepage section
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+<script src="{{ 'script.js' | asset_url }}" defer></script>
+
+<div class="custom-home-wrapper">
+    <!-- HERO SECTION -->
+<section class="hero-section">
+
+  <!-- Top Header -->
+  <div class="hero-header">
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Brand Logo  -->
+    <h3 class="brand-logo">TISSO VISON</h3>
+    <!-- Brand Subtitle -->
+    <p class="brand-subtitle">Find the ideal gift for your loved ones.</p>
+    <!-- Choose Gift Button -->
+    <a class="btn-yellow" href="#">CHOOSE GIFT →</a>
+
+  </div>
+
+  <!-- Main Hero Image -->
+  <div class="hero-banner"></div>
+
+  <!-- Hero Content Flexbox -->
+  <div class="hero-content">
+
+    <!-- Hero Text -->
+    <div class="hero-text">
+      <h2>The Gift Guide</h2>
+      <p>
+        Discover Joy: Your Ultimate Holiday Gift Destination.
+        <span>Explore our curated selection and find the perfect gifts
+        to delight your loved ones this holiday season.</span>
+      </p>
+      <a class="btn-black" id="des" href="#">SHOP NOW →</a>
+    </div>
+
+    <!-- Side Supporting Image -->
+    <div class="hero-side-image">
+      <a class="btn-black" id="mob" href="#">SHOP NOW →</a>
+    </div>
+
+  </div>
+
+  <!-- Footnote/Tagline -->
+  <div class="hero-footnote">
+    SUSTAINABLE, ETHICALLY MADE 
+    <span id="mob">ACTIVEWEAR</span>
+    <span id="des">CLOTHES IN SIZES XXS TO 4XL.</span>
+  </div>
+</section>
+
+<!-- FOOTER / IMAGE GALLERY -->
+<section class="footer-section">
+  <div class="footer-heading">Tisso Vision in the Wild</div>
+
+  <!-- Image Grid -->
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="{{ 'image-822.png' | asset_url }}" alt="Gallery Image 1">
+      <div class="gallery-plus position-1">+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ 'image-823.png' | asset_url }}" alt="Gallery Image 2">
+      <div class="gallery-plus position-2">+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ 'image-824.png' | asset_url }}" alt="Gallery Image 3">
+      <div class="gallery-plus position-3">+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ 'image-825.png' | asset_url }}" alt="Gallery Image 4">
+      <div class="gallery-plus position-4">+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ 'image-826.png' | asset_url }}" alt="Gallery Image 5">
+      <div class="gallery-plus position-5">+</div>
+    </div>
+    <div class="gallery-item">
+      <img src="{{ 'image-827.png' | asset_url }}" alt="Gallery Image 6">
+      <div class="gallery-plus position-6">+</div>
+    </div>
+  </div>
+</section>
+
+<!-- Popup -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup">
+    <span class="close" id="closeBtn">&times;</span>
+
+    <div class="popup-top">
+      <div class="popup-image">
+        <img src="https://via.placeholder.com/200x200" alt="Product">
+      </div>
+
+      <div class="popup-info">
+        <h2>Orange Wide Leg</h2>
+        <p class="price">980,00€</p>
+        <p class="desc">
+          This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.
+        </p>
+      </div>
+    </div>
+
+    <div class="popup-actions">
+      <label class="color-text">Color:</label>
+      <div class="color-options" id="colorOptions"></div>
+    </div>
+
+    <div class="size-container">
+      <label for="size" class="size-text">Size:</label>
+      <div class="dropdown" id="dropdown">
+        <div class="default-option" id="selected">Choose your size</div>
+        <div class="arrow-icon" id="arrow">
+          <div class="icon-arrow">^</div>
+        </div>
+        <div class="options" id="options">
+          <div class="option">XS</div>
+          <div class="option">S</div>
+          <div class="option">M</div>
+          <div class="option">L</div>
+          <div class="option">XL</div>
+        </div>
+      </div>
+    </div>
+
+    <button id="addToCartBtn" class="add-to-cart">ADD TO CART →</button>
+  </div>
+</div>
+
+</div>
