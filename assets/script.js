@@ -199,5 +199,5 @@ addToCartBtn.addEventListener('click', () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // ✅ After saving → Go to cart.html
-  window.location.href = "Shopify_cart.html";
+  window.location.href = "cart.html";
 });
