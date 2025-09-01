@@ -16,26 +16,16 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}   <!-- custom CSS -->
     {{ content_for_header }}
   </head>
 
   <body>
-    <header>
-      {%- render 'header' -%}
-    </header>
 
     <main id="MainContent" role="main">
       {{ content_for_layout }}
     </main>
 
-    <footer>
-      {%- render 'footer' -%}
-    </footer>
-
     {{ 'script.js' | asset_url | script_tag }} <!-- custom JS -->
-    {{ 'theme.js' | asset_url | script_tag }}
   </body>
 </html>
