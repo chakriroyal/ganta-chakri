@@ -1,51 +1,9 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true
-          }
-        }
-      },
-      "block_order": ["heading", "button"],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3"
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "columns_mobile": "2"
-      }
-    },
-    "custom_home": {
-      "type": "custom-home"
+    "custom-home": {
+      "type": "custom-home",
+      "settings": {}
     }
   },
-  "order": [
-    "image_banner",
-    "featured_collection",
-    "custom_home"
-  ]
+  "order": ["custom-home"]
 }
