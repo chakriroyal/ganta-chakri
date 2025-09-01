@@ -13,7 +13,7 @@ const addToCartBtn = document.getElementById('addToCartBtn'); // ADD TO CART but
 // Example product data
 const products = [
   {
-    img: "assets/image 822.png",
+    img: "{{ 'image 822.png' | asset_url }}",
     title: "Orange Wide Leg",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -23,7 +23,7 @@ const products = [
     ]
   },
   {
-    img: "assets/image 823.png",
+    img: "{{ 'image 823.png' | asset_url }}",
     title: "Tailored Jacket",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -33,7 +33,7 @@ const products = [
     ]
   },
   {
-    img: "assets/image 824.png",
+    img: "{{ 'image 824.png' | asset_url }}",
     title: "Accordion Pleated Dress",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -43,7 +43,7 @@ const products = [
     ]
   },
   {
-    img: "assets/image 825.png",
+    img: "{{ 'image 825.png' | asset_url }}",
     title: "Green Trench Coat",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -53,7 +53,7 @@ const products = [
     ]
   },
   {
-    img: "assets/image 826.png",
+    img: "{{ 'image 826.png' | asset_url }}",
     title: "Tennis Blue T-Shirt",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -63,7 +63,7 @@ const products = [
     ]
   },
   {
-    img: "assets/image 827.png",
+    img: "{{ 'image 827.png' | asset_url }}",
     title: "Long Sleeve Tennis Top",
     price: "980,00€",
     desc: "This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.",
@@ -199,5 +199,5 @@ addToCartBtn.addEventListener('click', () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // ✅ After saving → Go to cart.html
-  window.location.href = "cart.html";
+  window.location.href = "Shopify_cart.html";
 });
